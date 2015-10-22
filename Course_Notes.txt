@@ -1,0 +1,39 @@
+
+Discrete Time Signals
+------------------------
+
+Examples:
+x[n] = ((n+5) mod 11) - 5.
+x[n] = exp(j*pi*20/n).
+
+I. Basic Signals:
+1. Impulse:
+	delta[n] = 1 for n=0,
+		   0 for n!=0.
+
+2. Unit step:
+	u[n] = 1 for n>=0,
+	       0 for n<0.
+
+3. Exponential decay:
+	x[n] = a^n*u[n], for a belongs to C and mod a < 1
+
+4. Complex exponential
+	x[n] = exp(j*w0*n + phi)
+
+II. Elementary operations are:
+Delay, sum, scaling, product, Integration and differentialtion.
+Integration: y[n] = sum x[k] for k = -INF to n
+Differentiation: y[n] = x[n] - x[n-1]. NOte: This is a discrete time approximation, more precise filters are there.
+
+Any signal can be reproduced by x[n] = sum x[k]*delta[n-k] for k= -INF to +INF.
+
+III. Energy and power
+Energy of a discret-time signal Ex = (mod x[n])^2 for n= -INF to +INF.
+A square-summable signal is called a finite-energy signal. That is, its sum converges.
+
+Power Px = lim N->INF (1/2N) * (sum mod x[n])^2 for n = -N to N-1.
+
+==> Finite-energy signals have zero power.
+For periodic signals with infinite energy have finite power.
+Px = (1/n)*(sum mod x[n])^2 for n = 0 to N-1
